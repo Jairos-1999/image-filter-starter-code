@@ -34,31 +34,22 @@ export async function filterImageFromURL(inputURL: string): Promise<string> {
 //    files: Array<string> an array of absolute paths to files
 export async function deleteLocalFiles(filesPath: Array<string>) {
   try {
+    const { dirname } = require('path');
+    const { constants, promises: { access } } = require('fs');
+    let rootPath:string = '' 
+    for (let path of module.paths) {
+        await access(path, constants.F_OK);
+        rootPath =  dirname(path);
+    }
+
     for (let filePath of filesPath) {
-    if (fs.existsSync(filePath)) {
-      const rootPath = await getAppPath()
-      const temp = 'src\\util\\tmp\\'
-      const frags = filePath.split('/')
-      const file = frags[(frags.length - 1)];
-      const path = `${rootPath}\\${temp}\\${file}`
-      fs.unlinkSync(path);
+      if (fs.existsSync(filePath)) {
+        const temp = 'src\\util\\tmp\\'
+        const frags = filePath.split('/')
+        const file = frags[(frags.length - 1)];
+        const path = `${rootPath}\\${temp}\\${file}`
+        fs.unlinkSync(path);
+      }
     }
-  }
-  } catch(err) {
-
-  }
-}
-
-export async function getAppPath() {
-  const { dirname } = require('path');
-  const { constants, promises: { access } } = require('fs');
-  
-  for (let path of module.paths) {
-    try {
-      await access(path, constants.F_OK);
-      return dirname(path);
-    } catch (e) {
-      console.log(e)
-    }
-  }
+  } catch(err) {}
 }
