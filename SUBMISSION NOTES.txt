@@ -1,0 +1,14 @@
+#####
+
+PROJECT URL (ENDPOINT)
+http://imagefilterjairosdev-env.eba-v8zsgumw.us-east-1.elasticbeanstalk.com
+
+TESTED ENDPOINT
+http://imagefilterjairosdev-env.eba-v8zsgumw.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://images.pexels.com/photos/1508666/pexels-photo-1508666.jpeg?cs=srgb%26dl=pexels-daria-shevtsova-1508666.jpg%26fm=jpg
+
+SCREENSHOT IN:
+/deployment_screenshots
+
+ATTRIBUTION
+SITE: PEXELS
+IMAGE: https://images.pexels.com/photos/1508666/pexels-photo-1508666.jpeg?cs=srgb%26dl=pexels-daria-shevtsova-1508666.jpg%26fm=jpg
