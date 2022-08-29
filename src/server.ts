@@ -41,6 +41,10 @@ import {filterImageFromURL, deleteLocalFiles, getAppPath} from './util/util';
         return res.status(400).send({ message: 'Image URL is required or malformed' });
       }
 
+      if (!validURL.isUri(image_url)){
+        return res.status(400).send({ message: 'Image URL is invalid' });
+      }
+      
       const filteredpath:string = await filterImageFromURL(image_url)
       res.status(200).sendFile(filteredpath)
       await deleteLocalFiles([filteredpath])
