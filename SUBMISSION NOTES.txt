@@ -1,6 +1,11 @@
 #####
 
-PROJECT URL (ENDPOINT)
+GITHUB REPO:
+https://github.com/Jairos-1999/image-filter-starter-code
+https://github.com/Jairos-1999/image-filter-starter-code.git
+
+
+PROJECT URL (ENDPOINT):
 http://imagefilterjairosdev-env.eba-v8zsgumw.us-east-1.elasticbeanstalk.com
 
 TESTED ENDPOINT
